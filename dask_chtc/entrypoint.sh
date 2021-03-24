@@ -38,6 +38,10 @@ FILE_CA="$_CONDOR_SCRATCH_DIR/ca.pem"
 FILE_CERT="$_CONDOR_SCRATCH_DIR/cert.pem"
 FILE_KEY="$_CONDOR_SCRATCH_DIR/cert.pem"
 
+echo "Worker version:"
+"$@" --version
+echo
+
 # Add the contact address we calculated above to the worker arguments,
 # as well as TLS configuration.
 exec "$@" \
