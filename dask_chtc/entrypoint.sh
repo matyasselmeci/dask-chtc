@@ -38,8 +38,10 @@ FILE_CA="$_CONDOR_SCRATCH_DIR/ca.pem"
 FILE_CERT="$_CONDOR_SCRATCH_DIR/cert.pem"
 FILE_KEY="$_CONDOR_SCRATCH_DIR/cert.pem"
 
-echo "Worker version:"
-"$@" --version
+# "$@" --version gave me a traceback saying it couldn't determine the version.
+# This might not be entirely accurate but I think it's the best I can do
+echo "dask-worker version:"
+dask-worker --version 2>&1
 echo
 
 # Add the contact address we calculated above to the worker arguments,
